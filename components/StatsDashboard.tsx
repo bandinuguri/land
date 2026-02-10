@@ -17,18 +17,11 @@ import {
 } from 'recharts';
 import { YEARLY_STATS, AIRPORT_STATS } from '../constants';
 import { 
-  AlertTriangle, 
   TrendingUp, 
   Info, 
   EyeOff, 
-  Timer, 
   Octagon, 
-  ClipboardList, 
-  Wind, 
   Zap, 
-  User, 
-  Footprints, 
-  CheckCircle2, 
   Siren 
 } from 'lucide-react';
 
@@ -112,15 +105,14 @@ const StatsDashboard: React.FC = () => {
 
       {/* 2. 지상안전사고 현황 */}
       <section className="bg-white p-5 rounded-3xl shadow-sm border border-slate-200">
-        {/* 타이틀과 그래프 간격 축소 (mb-4 -> mb-1.5) */}
-        <div className="flex items-center gap-1.5 mb-1.5">
+        <div className="flex items-center gap-1.5 mb-2">
           <TrendingUp className="w-4 h-4 text-blue-600" />
           <h3 className="text-[15px] font-bold text-slate-800">지상안전사고 발생 현황</h3>
         </div>
         
-        <div className="h-[280px] w-full mb-6">
+        <div className="h-[300px] w-full mb-4">
           <ResponsiveContainer width="100%" height="100%">
-            <ComposedChart data={YEARLY_STATS} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+            <ComposedChart data={YEARLY_STATS} margin={{ top: 25, right: 10, left: -20, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
               <XAxis 
                 dataKey="year" 
@@ -134,7 +126,6 @@ const StatsDashboard: React.FC = () => {
               <Tooltip 
                 contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}
               />
-              {/* 범례와 차트 내용물 사이 간격 확대 (paddingBottom 10px -> 28px) */}
               <Legend 
                 verticalAlign="top" 
                 align="right" 
@@ -142,13 +133,13 @@ const StatsDashboard: React.FC = () => {
                 wrapperStyle={{ 
                   fontSize: '11px', 
                   fontWeight: 'bold', 
-                  paddingBottom: '28px',
-                  paddingTop: '5px'
+                  paddingBottom: '35px',
+                  paddingTop: '0px'
                 }} 
               />
               <Bar yAxisId="left" dataKey="flights" name="운항횟수" fill="#e2e8f0" barSize={32} radius={[4, 4, 0, 0]} />
               <Line yAxisId="right" type="monotone" dataKey="accidents" name="발생건수" stroke="#ef4444" strokeWidth={2} dot={{ r: 4, fill: '#ef4444', strokeWidth: 1, stroke: '#fff' }}>
-                <LabelList dataKey="accidents" position="top" offset={10} style={{ fill: '#ef4444', fontSize: 12, fontWeight: 800 }} />
+                <LabelList dataKey="accidents" position="top" offset={12} style={{ fill: '#ef4444', fontSize: 13, fontWeight: 900 }} />
               </Line>
               <Line yAxisId="right" type="monotone" dataKey="rate" name="환산건수" stroke="#f97316" strokeWidth={2} dot={{ r: 3, fill: '#f97316', strokeWidth: 1, stroke: '#fff' }} />
             </ComposedChart>
