@@ -30,7 +30,7 @@ export const AIRPORT_STATS: AirportStat[] = [
 
 export const CASES: Case[] = [
   {
-    id: 1,
+     id: 1,
     type: CaseType.EXCELLENCE,
     title: "강풍 대비 비동력장비(달리) 결박장치 개선 및 사고 예방",
     company: "샤프에비에이션케이",
@@ -41,6 +41,43 @@ export const CASES: Case[] = [
     cause: ["기존 비동력장비(Dolly)의 풋 브레이크 노후화로 인한 고정력 약화", "강풍 주의보 발령 시 개별 장비의 결박 상태를 확인하는 세부 점검 프로세스 부재"],
     countermeasure: ["모든 비동력 장비에 보조 결박장치(Chock 등) 전면 도입 및 교체", "기상 특보 발령 시 2중 결박 상태를 전수 점검하는 지침 수립"],
     effect: "개선 조치 이후 기상 악화 시에도 장비 이탈 사례가 단 한 건도 발생하지 않음"
+  },
+  {
+    id: 2,
+    type: CaseType.EXCELLENCE,
+    title: "BX7135편 Push-back 중 타 항공기 유도로 무단 진입 발견 및 충돌 예방",
+    company: "아시아나에어포트",
+    airport: "인천공항",
+    date: "2024.11.20",
+    content: "항공기 Push-back 진행 중 타사 항공기가 유도로 선상으로 무단 진입하는 것을 발견했습니다. 충돌 위험을 직감하고 즉시 중지하여 사고를 예방했습니다.",
+    cause: ["타 항공기 기장의 유도로 무단 진입 및 무리한 주기장 진입"],
+    countermeasure: ["조업 중 주변 상황(사주경계) 감시 강화", "위험 인지 시 즉각적인 조업 중단 신호 전달"],
+    effect: "신속한 사고 예방 조치를 통해 항공기 지상 충돌 위험을 사전에 차단",
+    footerImages: [{ url: 'image/best_02.png', label: '상황도' }]
+  },
+  {
+    id: 3,
+    type: CaseType.EXCELLENCE,
+    title: "BX175편 주기장 진입 중 접촉 위험 인지 및 비상조치(E-STOP)",
+    company: "아시아나에어포트",
+    airport: "인천공항",
+    date: "2024.05.14",
+    content: "#46 주기장 진입 중, 유도로에 정지해 있던 타 항공기 꼬리 날개와 BX 항공기 윙팁 간의 접촉 위험을 인지하고 VDGS E-STOP을 작동시켰습니다.",
+    cause: ["주기장 진입 경로 내 선행 항공기의 비정상 대기"],
+    countermeasure: ["시각 주기 유도 시스템(VDGS) 비상 정지 절차 숙지", "현장 유도 인원의 다각도 안전 감시 강화"],
+    effect: "항공기 간 접촉 사고를 사전에 차단하여 안전 운항 확보"
+  },
+  {
+    id: 4,
+    type: CaseType.EXCELLENCE,
+    title: "출발편 수하물 탑재 중 휴대폰(배터리) 조기 발견 및 화재 위험 차단",
+    company: "아시아나에어포트",
+    airport: "김포공항",
+    date: "2024.09.12",
+    content: "수하물을 인수받아 탑재하던 중 가방 주머니에서 휴대폰을 발견했습니다. 배터리 장착 물품은 화물실 탑재 불가이므로 즉시 보고하여 제외 처리했습니다.",
+    cause: ["승객의 위탁수하물 내 금지 물품(리튬배터리) 반입"],
+    countermeasure: ["위험물 취급 교육 주기적 실시", "수하물 탑재 전 육안 검사 및 보안 수칙 준수"],
+    effect: "화물실 내 배터리로 인한 화재 발생 가능성을 원천 봉쇄"
   },
   {
     id: 101,
